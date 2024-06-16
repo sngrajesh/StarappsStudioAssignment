@@ -1,0 +1,36 @@
+function minPlanes(fuel, pos, memo) {
+    const N = fuel.length;
+    // Base case 
+    if (pos >= N - 1) {
+        return 0;
+    }
+    // Chack answer is alteady present in the dp array
+    if (memo[pos] !== -1) {
+        return memo[pos];
+    }
+    let minPlanesRequired = Number.MAX_SAFE_INTEGER;
+    // Trying to get all the possible next steps within the fuel limit
+    for (let i = 1; i <= fuel[pos]; i++) {
+        let nextPos = pos + i;
+        if (nextPos < N) {
+            let result = minPlanes(fuel, nextPos, memo);
+            if (result !== Number.MAX_SAFE_INTEGER) {
+                minPlanesRequired = Math.min(minPlanesRequired, result + 1);
+            }
+        }
+    }
+    // Store the result in memo array
+    memo[pos] = minPlanesRequired;
+    return minPlanesRequired;
+}
+
+const fuel = [2, 3, 1, 1, 4];  // Just Change the Input for another testcase
+const N = fuel.length;
+const memo = new Array(N).fill(-1);
+const result = minPlanes(fuel, 0, memo);
+if (result === Number.MAX_SAFE_INTEGER) {
+    console.log(-1);
+} else {
+    console.log(result);
+}
+

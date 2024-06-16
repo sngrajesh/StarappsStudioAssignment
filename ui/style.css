@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&display=swap");
+* {
+  font-family: "Arimo", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e7f6fd;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100dvh;
+  padding: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.image-container {
+  position: relative;
+  aspect-ratio: 1 / 1 !important;
+  width: 40%;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.umbrella-image {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 50;
+}
+
+.themes-container {
+  width: 30%;
+  margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Arimo", sans-serif;
+}
+.themes-container h1 {
+  font-size: 2.5rem !important;
+}
+.themes button {
+  height: 25px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.themes .selected {
+  height: 25px !important;
+  border-width: 5px;
+}
+.color-palette {
+  display: flex;
+  justify-content: start;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.instructions h3 {
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+.instructions p {
+  margin-top: 0px;
+  font-size: 16px;
+}
+.instructions span {
+  font-size: 12px;
+  padding: 5px 0px;
+  opacity: 0.8;
+}
+#remove-logo-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.upload-button {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-bottom: 20px;
+}
+.loader-container {
+  align-items: center;
+}
+.loader-container svg {
+  animation: spin 2s linear infinite;
+}
+
+.upload-icon-image {
+  color: white;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#logo-upload-button {
+  min-width: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  background-color: #00a2e0;
+  border: 1px solid #e7f6fd;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+  opacity: 0.8;
+}
+#logo-upload-button:hover {
+  opacity: 1;
+}
+
+#logo-upload-button img {
+  height: 20px;
+  width: 20px;
+  align-self: center;
+  border-radius: 0px;
+  cursor: pointer;
+  border: 0px;
+}
+
+.logo-container {
+  position: absolute;
+  z-index: 1;
+  bottom: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logo-upload-button {
+  width: 270px;
+  height: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.upload-button-spacer {
+  height: 100%;
+  aspect-ratio: 1;
+}
